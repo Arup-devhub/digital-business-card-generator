@@ -30,6 +30,7 @@ body {
 .control-panel, .preview-panel {
     flex: 1;
     padding: 40px;
+    
 }
 
 .control-panel {
@@ -79,6 +80,7 @@ h2, h3 {
 .theme-selection {
     margin-top: 25px;
     margin-bottom: 25px;
+    
 }
 
 .theme-buttons {
@@ -131,6 +133,7 @@ h2, h3 {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s ease;
+    
 }
 
 .card-header {
