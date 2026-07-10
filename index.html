@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Business Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- html2canvas CDN library for downloading the card as an image -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- LEFT PANEL: CONTROL FORM -->
+        <div class="control-panel">
+            <h2>Card Details</h2>
+            <form id="cardForm">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="nameInput" placeholder="Arupananda Lenka" required>
+                </div>
+                <div class="input-group">
+                    <label>Job Title / Role</label>
+                    <input type="text" id="titleInput" placeholder="Software Engineer" required>
+                </div>
+                <div class="input-group">
+                    <label>Profile Image URL</label>
+                    <input type="url" id="imageInput" placeholder="https://via.placeholder.com/150">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="emailInput" placeholder="developer@example.com">
+                </div>
+                <div class="input-group">
+                    <label>LinkedIn URL</label>
+                    <input type="url" id="linkedinInput" placeholder="linkedin.com/in/username">
+                </div>
+                <div class="input-group">
+                    <label>GitHub URL</label>
+                    <input type="url" id="githubInput" placeholder="github.com/username">
+                </div>
+            </form>
+
+            <div class="theme-selection">
+                <h3>Select Template</h3>
+                <div class="theme-buttons">
+                    <button class="btn-theme active" onclick="changeTheme('theme-light')">Classic Light</button>
+                    <button class="btn-theme" onclick="changeTheme('theme-dark')">Modern Dark</button>
+                    <button class="btn-theme" onclick="changeTheme('theme-neon')">Cyber Neon</button>
+                </div>
+            </div>
+
+            <button id="downloadBtn" class="btn-action">Download Card (PNG)</button>
+        </div>
+
+        <!-- RIGHT PANEL: LIVE PREVIEW -->
+        <div class="preview-panel">
+            <h2>Live Preview</h2>
+            
+            <!-- This is the container that html2canvas will turn into an image -->
+            <div id="businessCard" class="card theme-light">
+                <div class="card-header">
+                    <img id="cardImage" src="https://via.placeholder.com/150" alt="Profile">
+                    <div class="identity">
+                        <h2 id="cardName">Your Name</h2>
+                        <p id="cardTitle">Your Designation</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="card-body">
+                    <p><strong>📧 Email:</strong> <span id="cardEmail">developer@example.com</span></p>
+                    <p><strong>💼 LinkedIn:</strong> <span id="cardLinkedin">linkedin.com/in/username</span></p>
+                    <p><strong>💻 GitHub:</strong> <span id="cardGithub">github.com/username</span></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* Core Layout Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    background-color: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Panels Split */
+.control-panel, .preview-panel {
+    flex: 1;
+    padding: 40px;
+}
+
+.control-panel {
+    border-right: 1px solid #334155;
+}
+
+.preview-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+/* Template Engine Buttons */
+.theme-selection {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-theme {
+    flex: 1;
+    padding: 10px;
+    background-color: #334155;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-theme.active, .btn-theme:hover {
+    background-color: #3b82f6;
+}
+
+.btn-action {
+    width: 100%;
+    padding: 14px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #059669;
+}
+
+/* --- VISUAL TEMPLATES ARCHITECTURE --- */
+/* Base Shared Properties for the Business Card Container */
+.card {
+    width: 450px;
+    height: 260px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid;
+}
+
+.identity h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.identity p {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.divider {
+    margin: 15px 0;
+    opacity: 0.3;
+}
+
+.card-body p {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+/* Template 1: Classic Light */
+.card.theme-light {
+    background: #ffffff;
+    color: #1e293b;
+}
+.card.theme-light .card-header img { border-color: #3b82f6; }
+.card.theme-light .identity p { color: #64748b; }
+.card.theme-light .divider { border: 0.5px solid #cbd5e1; }
+
+/* Template 2: Modern Dark */
+.card.theme-dark {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    border: 1px solid #334155;
+}
+.card.theme-dark .card-header img { border-color: #a855f7; }
+.card.theme-dark .identity p { color: #c084fc; }
+.card.theme-dark .divider { border: 0.5px solid #475569; }
+
+/* Template 3: Cyber Neon */
+.card.theme-neon {
+    background: #000000;
+    color: #00ffcc;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+}
+.card.theme-neon .card-header img { border-color: #00ffcc; }
+.card.theme-neon .identity h2 { color: #ffffff; text-shadow: 0 0 5px #ff007f; }
+.card.theme-neon .identity p { color: #ff007f; }
+.card.theme-neon .divider { border: 0.5px solid #ff007f; }
+.card.theme-neon .card-body strong { color: #ffffff; }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .app-container { flex-direction: column; }
+    .control-panel { border-right: none; border-bottom: 1px solid #334155; }
+    .card { width: 100%; max-width: 400px; height: auto; min-height: 250px; }
+}
