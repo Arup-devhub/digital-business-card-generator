@@ -1,0 +1,17 @@
+```text
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Project dependencies (if you were using npm)
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.log
