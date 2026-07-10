@@ -15,10 +15,13 @@ const cardLinkedin = document.getElementById('cardLinkedin');
 const cardGithub = document.getElementById('cardGithub');
 const businessCard = document.getElementById('businessCard');
 
+
 // Two-Way Data Binding: Event Listeners updating text instantly upon input
 nameInput.addEventListener('input', (e) => {
     cardName.innerText = e.target.value || "Your Name";
+    
 });
+
 
 titleInput.addEventListener('input', (e) => {
     cardTitle.innerText = e.target.value || "Your Designation";
