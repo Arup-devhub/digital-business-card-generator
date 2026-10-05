@@ -8,7 +8,7 @@ Thumbs.db
 # VS Code settings
 .vscode/
 
-# Project dependencies (if you were using npm)
+# Project dependencies 
 node_modules/
 
 # Build outputs
